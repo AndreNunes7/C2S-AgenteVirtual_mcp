@@ -1,91 +1,129 @@
-# 🚗 Desafio Técnico – Busca de Veículos
+# Desafio Técnico – Busca de Veículos
 
-# Solução para o desafio técnico da vaga de Desenvolvedor Python na C2S.
-# Aplicação de terminal para buscar veículos com filtros (marca, modelo, ano, preço, etc.)
-# usando linguagem natural. Arquitetura cliente-servidor (MCP) via sockets TCP e banco relacional.
+Este projeto é uma solução para o desafio técnico da vaga de Desenvolvedor Python na C2S. Ele implementa uma aplicação de terminal que permite buscar veículos com base em filtros (marca, modelo, ano, preço, etc.) por meio de um agente virtual com suporte a linguagem natural. A aplicação utiliza um protocolo cliente-servidor (MCP) via sockets TCP e um banco de dados relacional para armazenar os dados dos veículos.
 
-# 📦 Visão Geral
-# - 📊 Modelagem de Dados: Esquema com >10 atributos para veículos.
-# - 🔥 População de Dados: Geração de 100+ veículos fictícios com Faker.
-# - 🌐 Protocolo MCP: Comunicação cliente-servidor via JSON/TCP.
-# - 🧠 Agente Virtual: Interface no terminal com Google Gemini API.
-# - ✅ Testes Automatizados: pytest + coverage.
+## Visão Geral
 
-# 📁 Estrutura do Projeto
-# agente_buscaVeiculos/
-# ├── config/
-# │   └── veiculos.json
-# ├── src/
-# │   ├── agent/agente_virtual.py
-# │   ├── database/conexao.py
-# │   ├── database/populaBD.py
-# │   ├── mcp/cliente.py
-# │   ├── mcp/servidor.py
-# │   ├── models/veiculos.py
-# │   └── utils/util.py
-# ├── tests/
-# │   ├── test_agente_virtual.py
-# │   ├── test_populaBD.py
-# │   ├── test_mcp.py
-# │   └── test_servidor.py
-# ├── .env
-# ├── requirements.txt
-# └── README.md
+O projeto é composto por:
 
-# 🚀 Pré-requisitos
-# - Python 3.8+
-# - SQLite (ou outro compatível com SQLAlchemy)
-# - Google Gemini API Key
-# - Dependências em requirements.txt
+- **Modelagem de Dados**: Esquema de banco de dados para representar veículos com mais de 10 atributos (marca, modelo, ano, preço, etc.).
+- **População de Dados**: Script para gerar 100+ veículos fictícios usando a biblioteca `Faker`.
+- **Protocolo MCP**: Comunicação cliente-servidor para consultar veículos com base em filtros.
+- **Agente Virtual**: Interface no terminal que interage com o usuário, processa linguagem natural via Google Gemini API e exibe resultados de forma amigável.
+- **Testes Automatizados**: Testes unitários para validar as principais funcionalidades.
 
-# ⚙️ Instalação
+## Estrutura do Projeto
+```
+agente_buscaVeiculos/
+├── config/
+│   └── veiculos.json            # Configurações de marcas, modelos, opcionais, etc.
+├── src/
+│   ├── agent/
+│   │   ├── init.py
+│   │   └── agente_virtual.py    # Lógica do agente virtual com integração ao Gemini
+│   ├── database/
+│   │   ├── init.py
+│   │   ├── conexao.py           # Conexão com o banco de dados
+│   │   └── populaBD.py         # Script para popular o banco com dados fictícios
+│   ├── mcp/
+│   │   ├── init.py
+│   │   ├── cliente.py           # Cliente MCP para enviar filtros ao servidor
+│   │   └── servidor.py          # Servidor MCP para processar consultas
+│   ├── models/
+│   │   ├── init.py
+│   │   └── veiculos.py         # Modelos SQLAlchemy para veículos e opcionais
+│   ├── utils/
+│   │   ├── init.py
+│   │   └── util.py             # Funções utilitárias
+├── tests/
+│   ├── init.py
+│   ├── test_agente_virtual.py   # Testes do agente virtual
+│   ├── test_populaBD.py        # Testes da geração de dados
+│   ├── test_mcp.py             # Testes do cliente MCP
+│   └── test_servidor.py        # Testes do servidor MCP
+├── .env                        # Variáveis de ambiente (ex.: DB_URL, GEMINI_API_KEY)
+├── .gitignore                  # Arquivos e pastas ignorados pelo Git
+├── requirements.txt            # Dependências do projeto
+└── README.md                   # Este arquivo
 
-# Clone o repositório
-git clone https://github.com/seu-usuario/agente_buscaVeiculos.git
-cd agente_buscaVeiculos
+```
 
-# Crie e ative o ambiente virtual
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
 
-# Instale as dependências
-pip install -r requirements.txt
+## Pré-requisitos
 
-# Configure variáveis de ambiente
-echo "GEMINI_API_KEY=<SUA_API_KEY>" >> .env
-echo "DB_URL=sqlite:///bancoBD.db" >> .env
-echo "MCP_HOST=localhost" >> .env
-echo "MCP_PORT=5050" >> .env
+- **Python**: 3.8 ou superior
+- **Banco de Dados**: sqlite (ou outro compatível com SQLAlchemy)
+- **API Key**: Chave para a API do Google Gemini (para processamento de linguagem natural)
+- **Dependências**: Listadas em `requirements.txt`
 
-# 💻 Como Usar
+## Instalação
 
-# 1️⃣ Popular o Banco de Dados
-python -m src.database.populaBD
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/agente_buscaVeiculos.git
+   cd agente_buscaVeiculos```
 
-# 2️⃣ Iniciar o Servidor MCP
-python -m src.mcp.servidor
+2. **Crie e ative um ambiente virtual:**
+   ``` bash
+    python -m venv venv
+    source venv/bin/activate  # Linux/Mac
+    venv\Scripts\activate     # Windows
+   ```
+3. **Instale as dependências:**
+  ``` bash
+     pip install -r requirements.txt
+  ```
 
-# 3️⃣ Rodar o Agente Virtual
-python -m src.agent.agente_virtual
+4. 
+   ``` bash
+    GEMINI_API_KEY: <SUA API KEY>
+    DB_URL=sqlite:///bancoBD.db
+    MCP_HOST=localhost
+    MCP_PORT=5050
+   ```
 
-# 📝 Exemplos de uso:
-# Entrada: "Quero um Honda Civic 2020 branco até 100 mil"
-# Saída: Lista de veículos compatíveis com detalhes.
+**Como Usar**
+> Entre na pasta:  `cd .\agente_buscaVeiculos\` 
 
-# 4️⃣ Executar Testes
-pytest tests/ --cov=src
+1. Popular o Banco de Dados Execute o script para gerar 100 veículos fictícios:
+  ```bash
+   python -m src.database.populaBD
+  ```
+- Isso criará veículos com atributos variados (marca, modelo, ano, preço, etc.) no banco de dados.
+- A saída no terminal mostrará os veículos gerados.
 
-# 🏗️ Arquitetura
-# - models/veiculos.py: SQLAlchemy com validações e índices.
-# - database/populaBD.py: Faker para dados realistas (preço, km, ano).
-# - mcp/{cliente,servidor}.py: JSON via TCP com threading.
-# - agent/agente_virtual.py: Gemini API + interação natural.
-# - tests/: pytest com cobertura de comunicação e dados.
 
-# 📦 Dependências principais
-# - sqlalchemy
-# - faker
-# - google-generativeai
-# - tenacity
-# - pytest / pytest-cov
+2. Iniciar o Servidor MCP
+Execute o servidor para processar as consultas:
+  ```bash
+    python -m src.mcp.servidor
+  ```
+- O servidor será iniciado em localhost:5050 (ou conforme configurado no .env).
+- Mantenha o servidor rodando em um terminal separado.
+
+
+3. Iniciar o Agente Virtual
+Execute o agente para interagir com o usuário:
+  ```bash
+    python -m src.agent.agente_virtual
+  ```
+O agente perguntará sobre suas preferências de veículo (ex.: marca, modelo, preço) ou processará entradas em linguagem natural.
+Digite parar para sair.
+
+
+
+4. Exemplos de Uso
+- Entrada em linguagem natural: "Quero um Toyota Corolla 2020 vermelho até 80 mil"
+  - O agente extrairá filtros (marca: Toyota, modelo: Corolla, ano: 2020, cor: Vermelho, preco_max: 80000) e exibirá resultados.
+
+- Interação guiada: Responda às perguntas do agente (ex.: "Qual a marca de carro você está procurando?").
+- Resultados: O agente exibe até 10 veículos compatíveis, com detalhes como marca, modelo, ano, preço, quilometragem, etc.
+
+5. Executar Testes
+Execute os testes automatizados para validar as funcionalidades:
+  ```bash
+    pytest tests/ --cov=src
+  ```
+
+
+
