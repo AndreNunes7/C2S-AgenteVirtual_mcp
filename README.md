@@ -141,26 +141,10 @@ O agente estará pronto para interagir. Digite `parar` para sair da aplicação.
 
 ## Exemplos de Uso
 
-### Busca por Linguagem Natural
 
-```
-Usuário: "Quero um Toyota Corolla 2020 vermelho até 80 mil"
-Agente: Encontrei 3 veículos que correspondem aos seus critérios...
-```
-
-### Busca Interativa
-
-```
-Agente: Qual a marca de carro você está procurando?
-Usuário: Toyota
-Agente: Qual modelo específico?
-Usuário: Corolla
-```
 
 
 ## Executar Testes
-
-Para executar todos os testes com cobertura:
 
 ```bash
 pytest tests/ --cov=src 
