@@ -1,0 +1,133 @@
+{
+    "marcas_modelos": {
+        "Nissan": ["Kicks", "Versa", "Sentra", "Frontier", "Kicks Play"],
+        "Volkswagen": ["Tera TSI", "T-Cross", "Nivus", "Polo", "Virtus"],
+        "Honda": ["HR-V", "City Hatchback", "City", "Civic", "Accord", "Zr-v"],
+        "Toyota": ["Corolla", "Yaris hatch", "Yaris sedã"],
+        "Renault": ["Kwid", "Kardian", "Megane", "Duster", "Oroch"],
+        "Jeep": ["Renagade", "Compass", "Commander", "Wrangler", "Gladiator"],
+        "Ford": ["Ranger Raptor", "Maverick Black", "F-150", "Maverick Tremor"],
+        "Hyundai": ["Creta", "Hb20", "Hb20S", "Ioniq 5", "Tucson", "Kona"],
+        "Fiat": ["Cronos", "Fiorino", "Pulse", "Mobi", "Argo", "Toro", "Strada"],
+        "Peugeot": ["308", "2008", "208", "Partner", "2008", "E-2008", "Boxer"],
+        "Byd": ["Tan", "Dolphin", "Dolphin Plus", "Han", "Seal", "Yuan Plus", "Yuan Pro"],
+        "Porsche": ["718", "911", "Taycan", "Panamera", "Taycan", "Macan", "Cayenne"],
+        "Audi": ["A5 Sedan", "A6 e-tron", "Q6 e-tron", "Q8 e-tron", "e-tron GT quattro"]
+    },
+    "cores_populares": [
+        "Branco", "Prata", "Preto", "Cinza", "Vermelho",
+        "Verde", "Azul", "Bege", "Marrom", "Laranja", "Roxo", "Metálico"
+    ],
+    "motorizacoes": ["1.0", "1.3", "1.4", "1.5", "1.6", "1.8", "2.0", "2.4", "3.0"],
+    "cidades_estados": [
+        ["São Paulo", "SP"], ["Rio de Janeiro", "RJ"], ["Belo Horizonte", "MG"],
+        ["Campinas", "SP"], ["Vitória", "ES"], ["Santos", "SP"], ["Guarujá", "SP"],
+        ["Fortaleza", "CE"], ["Recife", "PE"], ["Belém", "PA"], ["Manaus", "AM"],
+        ["Salvador", "BA"], ["Sorocaba", "SP"], ["São Vicente", "SP"],
+        ["Nova Iguaçu", "RJ"], ["São Gonçalo", "RJ"], ["Hortolândia", "SP"],
+        ["Guaratinguetá", "SP"]
+    ],
+    "opcionais": [
+        "Air bag", "ABS", "Ar condicionado", "Direção hidráulica",
+        "Vidros elétricos", "Travas elétricas", "Alarme", "Som",
+        "Rodas de liga leve", "Bluetooth", "USB", "Teto solar"
+    ],
+    "precos_base": {
+        "Nissan": {
+            "Kicks": 110000,
+            "Versa": 95000,
+            "Sentra": 120000,
+            "Frontier": 200000,
+            "Kicks Play": 115000
+        },
+        "Volkswagen": {
+            "Tera TSI": 180000,
+            "T-Cross": 130000,
+            "Nivus": 125000,
+            "Polo": 90000,
+            "Virtus": 95000
+        },
+        "Honda": {
+            "HR-V": 140000,
+            "City Hatchback": 100000,
+            "City": 105000,
+            "Civic": 150000,
+            "Accord": 250000,
+            "Zr-v": 160000
+        },
+        "Toyota": {
+            "Corolla": 140000,
+            "Yaris hatch": 90000,
+            "Yaris sedã": 95000
+        },
+        "Renault": {
+            "Kwid": 65000,
+            "Kardian": 110000,
+            "Megane": 120000,
+            "Duster": 130000,
+            "Oroch": 140000
+        },
+        "Jeep": {
+            "Renagade": 130000,
+            "Compass": 180000,
+            "Commander": 220000,
+            "Wrangler": 350000,
+            "Gladiator": 400000
+        },
+        "Ford": {
+            "Ranger Raptor": 300000,
+            "Maverick Black": 200000,
+            "F-150": 350000,
+            "Maverick Tremor": 210000
+        },
+        "Hyundai": {
+            "Creta": 130000,
+            "Hb20": 85000,
+            "Hb20S": 90000,
+            "Ioniq 5": 300000,
+            "Tucson": 180000,
+            "Kona": 150000
+        },
+        "Fiat": {
+            "Cronos": 90000,
+            "Fiorino": 95000,
+            "Pulse": 110000,
+            "Mobi": 65000,
+            "Argo": 85000,
+            "Toro": 160000,
+            "Strada": 100000
+        },
+        "Peugeot": {
+            "308": 120000,
+            "2008": 130000,
+            "208": 90000,
+            "Partner": 100000,
+            "E-2008": 200000,
+            "Boxer": 150000
+        },
+        "Byd": {
+            "Tan": 350000,
+            "Dolphin": 180000,
+            "Dolphin Plus": 200000,
+            "Han": 400000,
+            "Seal": 300000,
+            "Yuan Plus": 250000,
+            "Yuan Pro": 220000
+        },
+        "Porsche": {
+            "718": 500000,
+            "911": 900000,
+            "Taycan": 800000,
+            "Panamera": 700000,
+            "Macan": 450000,
+            "Cayenne": 600000
+        },
+        "Audi": {
+            "A5 Sedan": 300000,
+            "A6 e-tron": 450000,
+            "Q6 e-tron": 500000,
+            "Q8 e-tron": 550000,
+            "e-tron GT quattro": 650000
+        }
+    }
+}
